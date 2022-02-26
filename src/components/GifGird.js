@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react'
 import { GifGirdItem } from './GifGridItem';
+import {getGifs} from '../helpers/getGifs';
 
-export const GifGird = ({category}) => {
+const GifGird = async() => {
 
     const [images, setImages] = useState([]);
 
     useEffect( () =>{
-        getGifs();
-    }, [])
+        getGifs(category)
+        .then(setimages);
+    }, [categorygit])
 
     const getGifs = () =>{
 
-        const url = 'api.giphy.com/v1/gifs/search?api_key=4029qNgQvECA5PhaTUJBZbGLQVpiWSxv&q=Rick and Morty&limit =10'
+        const url = 'https://api.giphy.com/v1/gifs/search?api_key={encodeURI(category)}4029qNgQvECA5PhaTUJBZbGLQVpiWSxv&q=Rick and Morty&limit =10'
         const resp = await fetch (url);
         const data = await resp.json();
 
