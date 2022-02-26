@@ -29,7 +29,8 @@ export const GifGird = ({category}) => {
     getGifts ();
 
   return (
-    <div>
+      <>
+    <div claasName="card-grid">
         <h3>{category}</h3>
 
         {
@@ -42,5 +43,6 @@ export const GifGird = ({category}) => {
         }
 
     </div>
+    </>
   )
 }
