@@ -4,7 +4,7 @@ export const GifGirdItem = ({title, url}) => {
 
 
     return (
-        <div className='card'>
+        <div className='card animate_animated animate_bounce'>
             <img src={url} alt ={title}/>
             <p>{title} </p>
         </div>
